@@ -34,4 +34,4 @@ var Apiman;
     }]);
 })(Apiman || (Apiman = {}));
 
-angular.module("my-awesome-plugin-templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("plugins/apiman/html/page1.html","<div class=\"row\">\n  <div class=\"col-md-12\" ng-controller=\"Apiman.Page1Controller\">\n    <h1>Page 1</h1>\n    <p>Hello {{target}}</p>\n  </div>\n</div>\n");}]); hawtioPluginLoader.addModule("my-awesome-plugin-templates");
+angular.module("apiman-plugin-templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("plugins/apiman/html/page1.html","<div class=\"row\">\n  <div class=\"col-md-12\" ng-controller=\"Apiman.Page1Controller\">\n    <h1>Page 1</h1>\n    <p>Hello {{target}}</p>\n  </div>\n</div>\n");}]); hawtioPluginLoader.addModule("apiman-plugin-templates");

@@ -1,1 +1,0 @@
-angular.module("my-awesome-plugin-templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("plugins/example/html/page1.html","<div class=\"row\">\n  <div class=\"col-md-12\" ng-controller=\"Example.Page1Controller\">\n    <h1>Page 1</h1>\n    <p>Hello {{target}}</p>\n  </div>\n</div>\n");}]); hawtioPluginLoader.addModule("my-awesome-plugin-templates");

@@ -5,7 +5,7 @@
     "hawtio"
   ],
   "main": [
-    "dist/my-awesome-plugin.js"
+    "dist/apiman-plugin.js"
   ],
   "ignore": [
     "**/.*",

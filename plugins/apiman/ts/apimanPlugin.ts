@@ -1,17 +1,17 @@
 /// <reference path="../../includes.ts"/>
-/// <reference path="exampleGlobals.ts"/>
-module Example {
+/// <reference path="apimanGlobals.ts"/>
+module Apiman {
 
-  export var _module = angular.module(Example.pluginName, []);
+  export var _module = angular.module(Apiman.pluginName, []);
 
   var tab = undefined;
 
   _module.config(['$locationProvider', '$routeProvider', 'HawtioNavBuilderProvider', ($locationProvider, $routeProvider:ng.route.IRouteProvider, builder:HawtioMainNav.BuilderFactory) => {
     tab = builder.create()
-      .id(Example.pluginName)
-      .title(() => "Example")
-      .href(() => "/example")
-      .subPath("Page 1", "page1", builder.join(Example.templatePath, 'page1.html'))
+      .id(Apiman.pluginName)
+      .title(() => "Apiman")
+      .href(() => "/apiman")
+      .subPath("Page 1", "page1", builder.join(Apiman.templatePath, 'page1.html'))
       .build();
     builder.configureRouting($routeProvider, tab);
     $locationProvider.html5Mode(true);
@@ -23,5 +23,5 @@ module Example {
   }]);
 
 
-  hawtioPluginLoader.addModule(Example.pluginName);
+  hawtioPluginLoader.addModule(Apiman.pluginName);
 }
