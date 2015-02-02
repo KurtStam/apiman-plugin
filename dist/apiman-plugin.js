@@ -3,7 +3,7 @@
 /// <reference path="../../includes.ts"/>
 var Apiman;
 (function (Apiman) {
-    Apiman.pluginName = "hawtio-assembly";
+    Apiman.pluginName = "apiman";
     Apiman.log = Logger.get(Apiman.pluginName);
     Apiman.templatePath = "plugins/apiman/html";
 })(Apiman || (Apiman = {}));
