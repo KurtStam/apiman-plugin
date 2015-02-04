@@ -24,7 +24,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a data-field="toUserHome" href="user-orgs.html" data-i18n-key="my-stuff">My Stuff</a>
+                    <a data-field="toUserHome" href="{{pluginName}}/user-orgs.html" data-i18n-key="my-stuff">My Stuff</a>
                   </li>
                   <li class="divider"></li>
                   <li>
@@ -65,7 +65,7 @@
           <div class="dash-group">
             <div class="title">
               <i class="fa fa-shield"></i>
-              <span data-i18n-key="organizations">Organizations {{target}}</span>
+              <span data-i18n-key="organizations">Organizations</span>
             </div>
             <div class="description" data-i18n-key="orgs-description">
               All services and applications must be managed within the context of an 
@@ -75,9 +75,9 @@
             </div>
             <div class="actions">
               <ul>
-                <li><a ng-href="/apiman/new-org.html" data-i18n-key="actions.create-new-org" data-field="createOrg">Create a New Organization</a></li>
-                <li><a ng-href="/apiman/consumer-orgs.html" data-i18n-key="actions.browse-orgs" data-field="browseOrgs">Browse/Find an Organization</a></li>
-                <li><a ng-href="/apiman/user-orgs.html" data-i18n-key="actions.my-orgs" data-field="myOrgs">Go to My Organizations</a></li>
+                <li><a ng-href="/{{pluginName}}/new-org.html" data-i18n-key="actions.create-new-org" data-field="createOrg">Create a New Organization</a></li>
+                <li><a ng-href="/{{pluginName}}/consumer-orgs.html" data-i18n-key="actions.browse-orgs" data-field="browseOrgs">Browse/Find an Organization</a></li>
+                <li><a ng-href="/{{pluginName}}/user-orgs.html" data-i18n-key="actions.my-orgs" data-field="myOrgs">Go to My Organizations</a></li>
               </ul>
             </div>
           </div>
@@ -95,9 +95,9 @@
             </div>
             <div class="actions">
               <ul>
-                <li><a href="consumer-services.html" data-i18n-key="actions.find-service" data-field="browseServices">Find/Consume a Service</a></li>
-                <li><a href="user-services.html" data-i18n-key="actions.my-services" data-field="myServices">Manage My Services</a></li>
-                <li><a href="new-service.html" data-i18n-key="actions.create-service" data-field="createService">Create a New Service</a></li>
+                <li><a href="/{{pluginName}}/consumer-services.html" data-i18n-key="actions.find-service" data-field="browseServices">Find/Consume a Service</a></li>
+                <li><a href="/{{pluginName}}/user-services.html" data-i18n-key="actions.my-services" data-field="myServices">Manage My Services</a></li>
+                <li><a href="/{{pluginName}}/new-service.html" data-i18n-key="actions.create-service" data-field="createService">Create a New Service</a></li>
               </ul>
             </div>
           </div>
@@ -114,8 +114,8 @@
             </div>
             <div class="actions">
               <ul>
-                <li><a href="user-apps.html" data-i18n-key="actions.my-apps" data-field="myApps">Manage My Applications</a></li>
-                <li><a href="new-app.html" data-i18n-key="actions.new-app" data-field="createApp">Create a New Application</a></li>
+                <li><a href="/{{pluginName}}/user-apps.html" data-i18n-key="actions.my-apps" data-field="myApps">Manage My Applications</a></li>
+                <li><a href="/{{pluginName}}/new-app.html" data-i18n-key="actions.new-app" data-field="createApp">Create a New Application</a></li>
               </ul>
             </div>
           </div>

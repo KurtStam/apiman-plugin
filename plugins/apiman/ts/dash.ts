@@ -2,7 +2,7 @@
 module Apiman {
 
   export var DashController = _module.controller("Apiman.DashController", ['$scope', ($scope) => {
-    $scope.target = "World!";
+    $scope.pluginName = Apiman.pluginName;
   }]);
 
 }

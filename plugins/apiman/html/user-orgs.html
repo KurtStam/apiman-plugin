@@ -46,7 +46,7 @@
       <div class="row">
         <div class="col-md-12">
           <ol class="breadcrumb" data-field="breadcrumb" data-role="dummy">
-            <li><a href="dash.html"><i class="fa fa-home fa-fw"></i><span>Home</span></a></li>
+            <li><a href="{{pluginName}}/dash.html"><i class="fa fa-home fa-fw"></i><span>Home</span></a></li>
             <li class="active"><i class="fa fa-user fa-fw"></i><span>eric</span></li>
           </ol>
         </div>
@@ -85,9 +85,9 @@
         <div class="col-md-8">
           <div class="apiman-entitytabs">
             <ul id="entitytabs" class="nav nav-tabs">
-              <li class="active"><a href="apiman/user-orgs.html" data-field="toUserOrgs" data-i18n-key="organizations">Organizations</a></li>
-              <li><a href="apiman/user-apps.html" data-field="toUserApps" data-i18n-key="applications">Applications</a></li>
-              <li><a href="apiman/user-services.html" data-field="toUserServices" data-i18n-key="services">Services</a></li>
+              <li class="active"><a href="{{pluginName}}/user-orgs.html" data-field="toUserOrgs" data-i18n-key="organizations">Organizations</a></li>
+              <li><a href="{{pluginName}}/user-apps.html" data-field="toUserApps" data-i18n-key="applications">Applications</a></li>
+              <li><a href="{{pluginName}}/user-services.html" data-field="toUserServices" data-i18n-key="services">Services</a></li>
               <li class="pull-right"><a href="user-activity.html" data-field="toUserActivity" data-i18n-key="activity">Activity</a></li>
             </ul>
             <div id="entitytabsContent" class="tab-content">
@@ -107,7 +107,7 @@
                       </tr>
                     </tbody>
                   </table>
-                  <a data-field="toNewOrg" href="apiman/new-org.html" class="btn btn-primary pull-right" data-i18n-key="new-organization">New Org</a>
+                  <a data-field="toNewOrg" href="{{pluginName}}/new-org.html" class="btn btn-primary pull-right" data-i18n-key="new-organization">New Org</a>
                 </div>
                 <div class="clearfix"></div>
                 <!-- The list of organizations the user belongs to -->

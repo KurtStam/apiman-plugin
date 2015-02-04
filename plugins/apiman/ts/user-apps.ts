@@ -2,10 +2,10 @@
 /// <reference path="services.ts"/>
 module Apiman {
 
-  export var UserOrgsController = _module.controller("Apiman.UserOrgsController", ['$scope', 'UserOrgs',  ($scope, UserOrgs) => {
+  export var UserAppsController = _module.controller("Apiman.UserAppsController", ['$scope', 'UserApps',  ($scope, UserApps) => {
     $scope.pluginName = Apiman.pluginName;
-    UserOrgs.query(function(userOrgs) {
-	$scope.organizations = userOrgs;
+    UserApps.query(function(userApps) {
+	$scope.applications = userApps;
    }, function(error) {  
         alert("ERROR=" + error);
    });
