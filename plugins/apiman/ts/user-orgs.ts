@@ -3,7 +3,6 @@
 module Apiman {
 
   export var UserOrgsController = _module.controller("Apiman.UserOrgsController", ['$scope', 'UserOrgs',  ($scope, UserOrgs) => {
-    $scope.pluginName = Apiman.pluginName;
     UserOrgs.query(function(userOrgs) {
 	$scope.organizations = userOrgs;
    }, function(error) {  

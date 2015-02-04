@@ -2,7 +2,6 @@
 module Apiman {
 
   export var DashController = _module.controller("Apiman.DashController", ['$scope', ($scope) => {
-    $scope.pluginName = Apiman.pluginName;
   }]);
 
 }
