@@ -42,11 +42,11 @@
     </div>
 
     <!-- Page content -->
-    <div class="page container" data-field="page" ng-controller="Apiman.UserOrgsController">
+    <div class="page container" data-field="page">
       <div class="row">
         <div class="col-md-12">
           <ol class="breadcrumb" data-field="breadcrumb" data-role="dummy">
-            <li><a href="{{pluginName}}/dash.html"><i class="fa fa-home fa-fw"></i><span>Home</span></a></li>
+            <li><a href="dash.html"><i class="fa fa-home fa-fw"></i><span>Home</span></a></li>
             <li class="active"><i class="fa fa-user fa-fw"></i><span>eric</span></li>
           </ol>
         </div>
@@ -85,9 +85,9 @@
         <div class="col-md-8">
           <div class="apiman-entitytabs">
             <ul id="entitytabs" class="nav nav-tabs">
-              <li class="active"><a href="{{pluginName}}/user-orgs.html" data-field="toUserOrgs" data-i18n-key="organizations">Organizations</a></li>
-              <li><a href="{{pluginName}}/user-apps.html" data-field="toUserApps" data-i18n-key="applications">Applications</a></li>
-              <li><a href="{{pluginName}}/user-services.html" data-field="toUserServices" data-i18n-key="services">Services</a></li>
+              <li class="active"><a href="user-orgs.html" data-field="toUserOrgs" data-i18n-key="organizations">Organizations</a></li>
+              <li><a href="user-apps.html" data-field="toUserApps" data-i18n-key="applications">Applications</a></li>
+              <li><a href="user-services.html" data-field="toUserServices" data-i18n-key="services">Services</a></li>
               <li class="pull-right"><a href="user-activity.html" data-field="toUserActivity" data-i18n-key="activity">Activity</a></li>
             </ul>
             <div id="entitytabsContent" class="tab-content">
@@ -99,7 +99,7 @@
                     <tbody>
                       <tr>
                         <td width="99%">
-                          <input data-field="textBox" value="" placeholder="Filter by organization name..." type="text">
+                          <input data-field="textBox" value="" placeholder="" type="text">
                         </td>
                         <td width="1%">
                           <button data-field="button" class="btn btn-default"><i class="fa fa-fw fa-search"></i></button>
@@ -107,30 +107,53 @@
                       </tr>
                     </tbody>
                   </table>
-                  <a data-field="toNewOrg" href="{{pluginName}}/new-org.html" class="btn btn-primary pull-right" data-i18n-key="new-organization">New Org</a>
+                  <a data-field="toNewOrg" href="new-org.html" class="btn btn-primary pull-right" data-i18n-key="new-organization">New Org</a>
                 </div>
                 <div class="clearfix"></div>
                 <!-- The list of organizations the user belongs to -->
-                <div class="apiman-organizations" ng-repeat="org in organizations">
+                <div class="apiman-organizations" data-field="organizations" data-role="dummy">
                   <div class="container-fluid apiman-summaryrow">
                     <div class="row">
-                      <span class="title"><a href="apiman/org-apps.html">{{ org.name }}</a></span>
-                      <a href="#" data-toggle="popover" data-trigger="hover" data-html="true" data-content="The organization contains <b>{{ org.numMembers }}</b> <em>members</em>." data-placement="top" class="apiman-summaryrow-icon">
+                      <span class="title"><a href="org-apps.html">JBoss Overlord</a></span>
+                      <a href="#" data-toggle="popover" data-trigger="hover" data-html="true" data-content="The organization contains <b>12</b> <em>members</em>." data-placement="top" class="apiman-summaryrow-icon">
                         <i class="fa fa-user"></i>
-                        <span class="title-summary-item">{{ org.numMembers }}</span>
+                        <span class="title-summary-item">12</span>
                       </a>
-                      <a href="#" data-toggle="popover" data-trigger="hover" data-html="true" data-content="The organization contains <b>{{ org.numServices }}</b> <em>services</em>." data-placement="top" class="apiman-summaryrow-icon">
+                      <a href="#" data-toggle="popover" data-trigger="hover" data-html="true" data-content="The organization contains <b>52</b> <em>services</em>." data-placement="top" class="apiman-summaryrow-icon">
                         <i class="fa fa-puzzle-piece"></i>
-                        <span class="title-summary-item">{{ org.numServices }}</span>
+                        <span class="title-summary-item">52</span>
                       </a>
-                      <a href="#" data-toggle="popover" data-trigger="hover" data-html="true" data-content="The organization contains <b>{{ org.numApps }}</b> <em>applications</em>." data-placement="top" class="apiman-summaryrow-icon">
+                      <a href="#" data-toggle="popover" data-trigger="hover" data-html="true" data-content="The organization contains <b>32</b> <em>applications</em>." data-placement="top" class="apiman-summaryrow-icon">
                         <i class="fa fa-gears"></i>
-                        <span class="title-summary-item">{{ org.numApps }}</span>
+                        <span class="title-summary-item">32</span>
                       </a>
                     </div>
                     <div class="row">
                       <span class="description">
-                        {{ org.description }}
+                        Overlord is the umbrella project that will bring governance to the JBoss SOA Platform and eventually beyond.
+                      </span>
+                    </div>
+                    <hr/>
+                  </div>
+                  <div class="container-fluid apiman-summaryrow">
+                    <div class="row">
+                      <span class="title"><a href="org-apps.html">Apereo Bedework</a></span>
+                      <a href="#" data-toggle="popover" data-trigger="hover" data-html="true" data-content="This organization contains <b>5</b> <em>members</em>." data-placement="top" class="apiman-summaryrow-icon">
+                        <i class="fa fa-user"></i>
+                        <span class="title-summary-item">5</span>
+                      </a>
+                      <a href="#" data-toggle="popover" data-trigger="hover" data-html="true" data-content="This organization contains <b>159</b> <em>services</em>." data-placement="top" class="apiman-summaryrow-icon">
+                        <i class="fa fa-puzzle-piece"></i>
+                        <span class="title-summary-item">159</span>
+                      </a>
+                      <a href="#" data-toggle="popover" data-trigger="hover" data-html="true" data-content="This organization contains <b>3</b> <em>applications</em>." data-placement="top" class="apiman-summaryrow-icon">
+                        <i class="fa fa-gears"></i>
+                        <span class="title-summary-item">3</span>
+                      </a>
+                    </div>
+                    <div class="row">
+                      <span class="description">
+                        Bedework is an open-source enterprise calendar system that supports public, personal, and group calendaring.
                       </span>
                     </div>
                     <hr/>

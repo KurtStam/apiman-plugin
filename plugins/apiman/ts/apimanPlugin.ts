@@ -26,8 +26,9 @@ module Apiman {
     $locationProvider.html5Mode(true);
   }]);
 
-  _module.run(['HawtioNav', (HawtioNav:HawtioMainNav.Registry) => {
+  _module.run(["$rootScope",'HawtioNav', ($rootScope,HawtioNav:HawtioMainNav.Registry) => {
     HawtioNav.add(tab);
+    $rootScope.pluginName = Apiman.pluginName;
     log.debug("loaded");
   }]);
 
