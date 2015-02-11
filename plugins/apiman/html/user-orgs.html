@@ -58,7 +58,7 @@
               <li class="active"><a href="{{ pluginName }}/user-orgs.html" data-field="toUserOrgs" data-i18n-key="organizations">Organizations</a></li>
               <li><a href="{{ pluginName }}/user-apps.html" data-field="toUserApps" data-i18n-key="applications">Applications</a></li>
               <li><a href="{{ pluginName }}/user-services.html" data-field="toUserServices" data-i18n-key="services">Services</a></li>
-              <li class="pull-right"><a href="user-activity.html" data-field="toUserActivity" data-i18n-key="activity">Activity</a></li>
+              <li class="pull-right"><a href="{{ pluginName }}/user-activity.html" data-field="toUserActivity" data-i18n-key="activity">Activity</a></li>
             </ul>
             <div id="entitytabsContent" class="tab-content">
               
@@ -84,7 +84,7 @@
                 <div class="apiman-organizations" data-field="organizations" data-role="dummy" ng-repeat="org in organizations">
                   <div class="container-fluid apiman-summaryrow">
                     <div class="row">
-                      <span class="title"><a href="org-apps.html">{{ org.name }}</a></span>
+                      <span class="title"><a href="{{ pluginName }}/org-plans.html?org={{ org.id }}">{{ org.name }}</a></span>
                       <a href="#" data-toggle="popover" data-trigger="hover" data-html="true" data-content="The organization contains <b>{{ org.numMembers }}</b> <em>members</em>." data-placement="top" class="apiman-summaryrow-icon">
                         <i class="fa fa-user"></i>
                         <span class="title-summary-item">{{ org.numMembers }}</span>

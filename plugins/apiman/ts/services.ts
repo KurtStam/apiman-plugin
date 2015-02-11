@@ -4,7 +4,7 @@
     function($resource){
       return $resource('http://127.0.0.1/apiman/organizations/:organizationId/applications', {organizationId:'@organizationId'});
    }]);
-
+   
    var userAppsServices = angular.module('userAppsServices', ['ngResource']);
    userAppsServices.factory('UserApps', ['$resource',
     function($resource){
@@ -20,7 +20,5 @@
    var organizationServices = angular.module('organizationServices', ['ngResource']);
    organizationServices.factory('OrganizationEntry', ['$resource',
     function($resource){
-      return $resource('http://127.0.0.1/apiman/organizations/:id');
+      return $resource('http://127.0.0.1/apiman/organizations/:organizationId/:entityType', {organizationId:'@organizationId', entityType:'@entityType'});
    }]);
- 
-
