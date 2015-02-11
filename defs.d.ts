@@ -7,6 +7,7 @@
 /// <reference path="d.ts/apiman/ts/new-app.d.ts"/>
 /// <reference path="d.ts/apiman/ts/new-org.d.ts"/>
 /// <reference path="d.ts/apiman/ts/org-applications.d.ts"/>
+/// <reference path="d.ts/apiman/ts/org-members.d.ts"/>
 /// <reference path="d.ts/apiman/ts/org-plans.d.ts"/>
 /// <reference path="d.ts/apiman/ts/org-services.d.ts"/>
 /// <reference path="d.ts/apiman/ts/user-apps.d.ts"/>
