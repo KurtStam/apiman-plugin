@@ -1,24 +1,14 @@
 
-   var applicationServices = angular.module('applicationServices', ['ngResource']);
-   applicationServices.factory('ApplicationEntry', ['$resource',
+   var userServices = angular.module('userServices', ['ngResource']);
+   userServices.factory('UserSvcs', ['$resource',
     function($resource){
-      return $resource('http://127.0.0.1/apiman/organizations/:organizationId/applications', {organizationId:'@organizationId'});
-   }]);
-   
-   var userAppsServices = angular.module('userAppsServices', ['ngResource']);
-   userAppsServices.factory('UserApps', ['$resource',
-    function($resource){
-      return $resource('http://127.0.0.1/apiman/users/admin/applications');
-   }]);
-
-   var userOrgsServices = angular.module('userOrgsServices', ['ngResource']);
-   userOrgsServices.factory('UserOrgs', ['$resource',
-    function($resource){
-      return $resource('http://127.0.0.1/apiman/users/admin/organizations');
+      return $resource('http://127.0.0.1/apiman/users/admin/:entityType',
+	{entityType:'@entityType'});
    }]);
  
    var organizationServices = angular.module('organizationServices', ['ngResource']);
-   organizationServices.factory('OrganizationEntry', ['$resource',
+   organizationServices.factory('OrgSvcs', ['$resource',
     function($resource){
-      return $resource('http://127.0.0.1/apiman/organizations/:organizationId/:entityType', {organizationId:'@organizationId', entityType:'@entityType'});
+      return $resource('http://127.0.0.1/apiman/organizations/:organizationId/:entityType/:applicationId/:versionsOrActivity',
+	{organizationId:'@organizationId', entityType:'@entityType', applicationId:'@applicationId',versionsOrActivity:'@versionsOrActivity'});
    }]);

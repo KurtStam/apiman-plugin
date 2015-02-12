@@ -3,7 +3,7 @@
 /// <reference path="services.ts"/>
 module Apiman {
 
-  export var _module = angular.module(Apiman.pluginName, ['userAppsServices','userOrgsServices','applicationServices','organizationServices']);
+  export var _module = angular.module(Apiman.pluginName, ['userServices','organizationServices']);
 
   var tab = undefined;
 
@@ -17,6 +17,7 @@ module Apiman {
     builder.configureRouting($routeProvider, tab);
    
     $routeProvider.when('/apiman/consumer-orgs.html',    { templateUrl: builder.join(Apiman.templatePath, 'consumer-orgs.html') });
+    $routeProvider.when('/apiman/app-overview.html',             { templateUrl: builder.join(Apiman.templatePath, 'app-overview.html')      });
     $routeProvider.when('/apiman/dash.html',             { templateUrl: builder.join(Apiman.templatePath, 'dash.html')      });
     $routeProvider.when('/apiman/new-app.html',          { templateUrl: builder.join(Apiman.templatePath, 'new-app.html')   });
     $routeProvider.when('/apiman/new-org.html',          { templateUrl: builder.join(Apiman.templatePath, 'new-org.html')   });

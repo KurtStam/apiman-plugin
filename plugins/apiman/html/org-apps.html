@@ -45,7 +45,7 @@
                 <div class="apiman-applications" data-field="applications" data-role="dummy" ng-repeat="app in apps">
                   <div class="container-fluid apiman-summaryrow">
                     <div class="row">
-                      <span class="title"><a href="{{ pluginName }}/app-overview.html">app.name</a></span>
+                      <span class="title"><a href="{{ pluginName }}/app-overview.html?org={{org.id}}&app={{app.id}}">{{ app.name }}</a></span>
                       <a href="#" data-toggle="popover" data-trigger="hover" data-html="true" data-content="This application invokes <b>52</b> <em>services</em>." data-placement="top" class="apiman-summaryrow-icon">
                         <i class="fa fa-puzzle-piece"></i>
                         <span class="title-summary-item">52</span>

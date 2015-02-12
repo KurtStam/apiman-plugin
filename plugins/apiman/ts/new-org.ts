@@ -1,11 +1,11 @@
 /// <reference path="apimanPlugin.ts"/>
 module Apiman {
 
-  export var NewOrgController = _module.controller("Apiman.NewOrgController", ['$location','$scope', 'OrganizationEntry',  ($location,$scope, OrganizationEntry) => {
+  export var NewOrgController = _module.controller("Apiman.NewOrgController", ['$location','$scope', 'OrgSvcs',  ($location,$scope, OrgSvcs) => {
 
     $scope.saveNewOrg = function() {
         
-        OrganizationEntry.save($scope.org, function(reply) {
+        OrgSvcs.save($scope.org, function(reply) {
            $location.path('apiman/dash.html');
         }, function(error) {
            if (error.status == 409) {

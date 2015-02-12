@@ -7,47 +7,17 @@
   </head>
 
   <body>
+  <div ng-controller="Apiman.AppOverviewController">
 
-    <!-- Top header/nav bar -->
-    <div id="apiman-header">
-      <div class="main-header container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="logo"></div>
-            <input class="search no-phone" type="text" placeholder="Quick service search..."></input>
-            <ul class="user-menu pull-right">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <span class="pficon pficon-user"></span>
-                  <span>Bruce Wayne</span>
-                  <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="user-orgs.html">Home</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                    <a data-field="toProfile" href="settings-profile.html" data-i18n-key="profile">Profile</a>
-                  </li>
-                  <li>
-                    <a href="#">Logout</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div id="apiman-header" ng-include="'plugins/apiman/html/navbar.html'"></div>
 
     <div class="container page" data-field="page">
       <div class="row">
         <div class="col-md-12">
           <ol class="breadcrumb" data-field="breadcrumb" data-role="dummy">
-            <li><a href="dash.html"><i class="fa fa-home fa-fw"></i><span>Home</span></a></li>
-            <li><a href="org-apps.html"><i class="fa fa-shield fa-fw"></i><span>JBoss Overlord</span></a></li>
-            <li class="active"><i class="fa fa-gears fa-fw"></i><span>gadget-server</span></li>
+            <li><a href="{{ pluginName }}/dash.html"><i class="fa fa-home fa-fw"></i><span>Home</span></a></li>
+            <li><a href="{{ pluginName }}/org-apps.html?org={{ org.id }}"><i class="fa fa-shield fa-fw"></i><span>{{ org.name }}</span></a></li>
+            <li class="active"><i class="fa fa-gears fa-fw"></i><span>{{ app.name }}</span></li>
           </ol>
         </div>
       </div>
@@ -58,20 +28,15 @@
             <div class="title container-fluid">
               <i class="breadcrumb-icon fa fa-gears"></i>
               <div class="entity emphasis">
-                <a data-field="application" href="app-overview.html" data-role="dummy">gadget-server</a>
+                <a data-field="application" href="{{ pluginName }}/app-overview.html?org={{ org.id }}" data-role="dummy">{{ app.name }}</a>
               </div>
               <div class="versions">
                 <div class="btn-group apiman-entity-action" data-role="dummy" data-field="versions">
-                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    Version: 3.0.1 <span class="caret"></span>
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{selectedAppVersion.version}}
+                    <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">3.0</a></li>
-                    <li><a href="#">2.1.1</a></li>
-                    <li><a href="#">2.1</a></li>
-                    <li><a href="#">2.0.1</a></li>
-                    <li><a href="#">2.0</a></li>
-                    <li><a href="#">1.0</a></li>
+                    <li ng-repeat="appVersion in versions"><a href="#" ng-click="setVersion( appVersion )">{{ appVersion.version }}</a></li>
                   </ul>
                 </div>
                 <a data-permission="appEdit" href="new-appversion.html" class="btn btn-primary apiman-entity-action" data-field="toNewAppVersion" data-i18n-key="new-version">New Version</a>
@@ -176,5 +141,6 @@
         <!-- /Content -->
       </div>
     </div> <!-- /container -->
+  </div>
   </body>
 </html>

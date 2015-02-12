@@ -2,19 +2,19 @@
 /// <reference path="services.ts"/>
 module Apiman {
 
-  export var OrgAppsController = _module.controller("Apiman.OrgAppsController", ['$scope', '$location', 'OrganizationEntry',  ($scope, $location, OrganizationEntry) => {
+  export var OrgAppsController = _module.controller("Apiman.OrgAppsController", ['$scope', '$location', 'OrgSvcs',  ($scope, $location, OrgSvcs) => {
     var params = $location.search();
-    OrganizationEntry.get({organizationId: params.org, entityType: ''}, function(org) {
+    OrgSvcs.get({organizationId: params.org, entityType: ''}, function(org) {
         $scope.org = org;
     } , function(error) {
         alert("ERROR=" + error);
     });    
-    OrganizationEntry.query({organizationId: params.org, entityType: 'members'}, function(members) {
+    OrgSvcs.query({organizationId: params.org, entityType: 'members'}, function(members) {
         $scope.members = members;
     } , function(error) {
         alert("ERROR=" + error);
     });
-    OrganizationEntry.query({organizationId: params.org, entityType: 'applications'}, function(apps) {
+    OrgSvcs.query({organizationId: params.org, entityType: 'applications'}, function(apps) {
         $scope.apps = apps;
     } , function(error) {
         alert("ERROR=" + error);
