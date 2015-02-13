@@ -22,7 +22,7 @@ module Apiman {
       $location.path( Apiman.pluginName + "/app-overview.html").search('org', params.org).search('app', params.app).search('version', app.version);
     };
 
-    OrgSvcs.query({organizationId: params.org, entityType: 'applications', entityId: params.app, versionsOrActivity: 'versions', version: params.version}, function(versions) {
+    OrgSvcs.query({organizationId: params.org, entityType: 'applications', entityId: params.app, versionsOrActivity: 'versions', version: $scope.version}, function(versions) {
         $scope.versions = versions;
         if (params.version != null) { 
           for (var i=0; i<versions.length; i++) {

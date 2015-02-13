@@ -45,7 +45,7 @@
                 <div class="apiman-plans" data-field="plans" data-role="dummy" ng-repeat="plan in plans">
                   <div class="container-fluid apiman-summaryrow">
                     <div class="row">
-                      <span class="title"><a href="{{ pluginName }}/plan-overview.html">{{ plan.name }}</a></span>
+                      <span class="title"><a href="{{ pluginName }}/plan-overview.html?org={{ org.id }}&plan={{ plan.id}}">{{ plan.name }}</a></span>
                     </div>
                     <div class="row">
                       <span class="description">{{ plan.description }}
